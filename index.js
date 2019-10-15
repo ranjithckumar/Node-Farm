@@ -1,7 +1,7 @@
 const fs=require('fs');
 const http=require('http');
 const url=require('url');
-const port=8000;
+const port=9000;
 
 ////////SERVER STARTS HERE
 const repalceTemplate=(temp,product)=>{
@@ -16,10 +16,10 @@ const repalceTemplate=(temp,product)=>{
     if(!product.organic) output=output.replace(/{%NOT_ORGANIC%}/g,'not_organic');
     return output;
 }
-const tempOverview=fs.readFileSync(`${__dirname}/starter/templates/template-overview.html`,'utf-8');
-const tempCard=fs.readFileSync(`${__dirname}/starter/templates/template-card.html`,'utf-8');
-const tempProduct=fs.readFileSync(`${__dirname}/starter/templates/template-product.html`,'utf-8');
-const data=fs.readFileSync(`${__dirname}/starter/dev-data/data.json`,'utf-8');
+const tempOverview=fs.readFileSync(`${__dirname}/src/template-overview.html`,'utf-8');
+const tempCard=fs.readFileSync(`${__dirname}/src/template-card.html`,'utf-8');
+const tempProduct=fs.readFileSync(`${__dirname}/src/template-product.html`,'utf-8');
+const data=fs.readFileSync(`${__dirname}/js/data.json`,'utf-8');
 const dataObj=JSON.parse(data);
  
 const server=http.createServer((req,res)=>{
@@ -59,5 +59,5 @@ const server=http.createServer((req,res)=>{
 });
 // server.listen(port);
 server.listen(port,'127.0.0.1',()=>{
-    console.log('Lisenting to request on port 8000');
+    console.log('Lisenting to request on port 9000');
 }); 
