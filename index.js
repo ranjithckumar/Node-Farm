@@ -9,7 +9,7 @@ const repalceTemplate=require('./modules/replaceTemplate');
 const tempOverview=fs.readFileSync(`${__dirname}/src/template-overview.html`,'utf-8');
 const tempCard=fs.readFileSync(`${__dirname}/src/template-card.html`,'utf-8');
 const tempProduct=fs.readFileSync(`${__dirname}/src/template-product.html`,'utf-8');
-const data=fs.readFileSync(`${__dirname}/js/data.json`,'utf-8');
+const data=fs.readFileSync(`${__dirname}/json/data.json`,'utf-8');
 const dataObj=JSON.parse(data);
  
 const server=http.createServer((req,res)=>{
